@@ -1,6 +1,6 @@
-package Workshop;
+package Workbook;
 
-public class Workshop01 {
+public class chap05_test05 {
 	public static int calcSum(int a, int b, int c, int d) {
 		return a + b + c + d;
 	}
