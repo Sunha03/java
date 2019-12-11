@@ -6,6 +6,21 @@ public class Student {
 	public int english;
 	public int math;
 	public int science;
+	public int age;
+	
+	//기본 생성자
+	public Student() {
+		
+	}
+	
+	//생성자
+	public Student(String name, int korean, int english, int math, int science) {
+		this.name = name;
+		this.korean = korean;
+		this.english = english;
+		this.math = math;
+		this.science = science;
+	}
 	
 	public void setName(String name) {
 		this.name = name;
@@ -68,5 +83,13 @@ public class Student {
 	
 	public void print() {
 		System.out.println(getName() + " 평균 : " + getAvg() + " 학점 : " + getGrade() + "학점");
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 }

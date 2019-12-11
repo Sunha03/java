@@ -2,7 +2,7 @@ package Workbook;
 
 import java.util.*;
 
-public class chap05_test06 {
+public class chap05_test06_Student {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,19 +21,23 @@ public class chap05_test06 {
 		lee.setScience(98);
 		
 		Student park = new Student();
-		park.setName("Kim");
+		park.setName("Park");
 		park.setKorean(68);
 		park.setEnglish(86);
 		park.setMath(60);
-		park.setScience(40);
+		park.setScience(40);*/
+
+		//생성자 버전
+		Student kim = new Student("Kim", 100, 90, 95, 89);
+		Student lee = new Student("Lee", 60, 70, 99, 98);
+		Student park = new Student("Park", 68, 86, 60, 40);
 		
 		System.out.println(kim.getName() + " 평균 : " + kim.getAvg() + " 학점 : " + kim.getGrade() + "학점");
 		System.out.println(lee.getName() + " 평균 : " + lee.getAvg() + " 학점 : " + lee.getGrade() + "학점");
-		System.out.println(park.getName() + " 평균 : " + park.getAvg() + " 학점 : " + park.getGrade() + "학점");*/
-		
+		System.out.println(park.getName() + " 평균 : " + park.getAvg() + " 학점 : " + park.getGrade() + "학점");
 
 		//Student 객체 배열 버전
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		
 		Student[] sd = new Student[3];
 		for(int i=0;i<sd.length;i++) {
@@ -50,6 +54,10 @@ public class chap05_test06 {
 			//System.out.println(sd[i].getName() + " 평균 : " + sd[i].getAvg() + " 학점 : " + sd[i].getGrade() + "학점");
 			sd[i].print();
 		}
+		*/
+
+		
+		
 	}
 
 }

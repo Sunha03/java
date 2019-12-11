@@ -2,7 +2,7 @@ package Workbook;
 
 import java.util.*;
 
-public class chap05_test07 {
+public class chap05_test07_Book {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

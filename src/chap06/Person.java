@@ -17,6 +17,17 @@ public class Person {
 	
 	// 모든 멤버변수는 private으로 선언되어 있기 때문에 값을 설정하는 메소드와 값을 가져올 수 이는 메소드가 필요하다.
 	// 이런 역할을 하는 메소드를 정의하는 경우
+	
+	//기본 생성자
+	public Person() {
+		//코드
+	}
+	
+	public Person(String name, String addr, int age) {
+		this.name = name;
+		this.addr = addr;
+		this.age = age;
+	}
 
 	// name 변수에 값을 설정하는 메소드
 	// - 메소드명 : set + 멤버변수명(첫 글자를 대문자로 바꾼) -> return값 void
@@ -46,5 +57,10 @@ public class Person {
 	
 	public int getAge() {
 		return age;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", addr=" + addr + ", age=" + age + "]";
 	}
 }

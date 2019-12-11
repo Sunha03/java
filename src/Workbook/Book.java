@@ -30,7 +30,7 @@ public class Book {
 	}
 	
 	public double getDiscountBookPrice() {
-		return bookPrice -= bookPrice * bookDiscountRate * 0.01;
+		return bookPrice - (bookPrice * bookDiscountRate * 0.01);
 	}
 
 	public void print() {

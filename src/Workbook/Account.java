@@ -5,6 +5,18 @@ public class Account {
 	public int balance;
 	public double interestRate;
 	
+	//奄沙 持失切
+	public Account() {
+		
+	}
+	
+	//持失切
+	public Account(String account, int balance, double interestRate) {
+		this.account = account;
+		this.balance = balance;
+		this.interestRate = interestRate;
+	}
+	
 	public void setAccount(String account) {
 		this.account = account;
 	}
