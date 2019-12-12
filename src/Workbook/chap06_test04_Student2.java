@@ -18,7 +18,7 @@ public class chap06_test04_Student2 {
 			weightSum += st[i].weight;
 			System.out.println(st[i].name + "\t" + st[i].age + "\t" + st[i].height + "\t" + st[i].weight);
 		}
-		System.out.println("³ªÀÌÀÇ Æò±Õ : " + Math.round((double)(ageSum / st.length) * 100d) / 100d);
+		System.out.println("³ªÀÌÀÇ Æò±Õ : " + Math.round((double)(ageSum / st.length) * 100) / 100.0);
 		System.out.println("½ÅÀåÀÇ Æò±Õ : " + Math.round((double)(heightSum / st.length) * 100d) / 100d);
 		System.out.println("¸ö¹«°ÔÀÇ Æò±Õ : " + Math.round((double)(weightSum / st.length) * 100d) / 100d);
 	}
