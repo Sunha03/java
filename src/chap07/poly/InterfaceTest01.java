@@ -39,6 +39,24 @@ class SuperA {
 
 //SubA는 SuperA, InterA, InterB, InterC를 상속
 class SubA extends SuperA implements InterB, InterC {
+
+	@Override
+	public void test() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void display(int num) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
 
