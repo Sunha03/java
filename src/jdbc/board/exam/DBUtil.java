@@ -31,4 +31,19 @@ public class DBUtil {
 		
 		return con;
 	}
+	
+	//3. 자원 반남 - ResultSet, Statement, Connection 객체 사용을 해제
+	//			  > 각각의 객체를 해제할 수 있도록 메소드를 정의해도 됨
+	public static void close(ResultSet rs, Statement stmt, Connection con) {
+		try {
+			if(rs != null)
+				rs.close();
+			if(stmt != null)
+				stmt.close();
+			if(con != null)
+				con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class boardDAOTest {
 
 	public static void main(String[] args) {
-		boardDAO obj = new boardDAO();
+		boardDAOImpl obj = new boardDAOImpl();
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("================ 게시물 호출 ================");
@@ -16,7 +16,8 @@ public class boardDAOTest {
 		System.out.print("Content를 입력하세요 : ");
 		String content = sc.nextLine();
 		
-		obj.insert(id, title, content);
+		BoardDTO dto = new BoardDTO(id, title, content);
+		obj.insert(dto);
 		obj.delete(21);
 		obj.update("son", 26);
 		obj.select();
