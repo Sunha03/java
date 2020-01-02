@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<table border="1">
+			<tr>
+				<th colspan="2">회원가입</th>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name" />
+				</td>
+			</tr>
+			<tr>
+				<th>사용자 ID</th>
+				<td>
+					<input type="text" name="id" />
+				</td>
+			</tr>
+			<tr>
+				<th>암호</th>
+				<td>
+					<input type="password" name="pw" />
+				</td>
+			</tr>
+			<tr>
+				<th>암호 확인</th>
+				<td>
+					<input type="password" name="pw2" size="30"/>
+				</td>
+			</tr>
+			<tr>
+				<th>주민등록번호</th>
+				<td>
+					<input type="text" name="regident_num1" size="5" maxlength="6"/> 
+					<input type="password" name="regident_num2" size="5" maxlength="7"/>
+				</td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td>
+					<input type="text" name="number1" size="3" maxlength="3"/> - 
+					<input type="text" name="number2" size="3" maxlength="4"/> - 
+					<input type="text" name="number3" size="3" maxlength="4"/>
+				</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<input type="radio" name="male" value="male">남자</input>
+					<input type="radio" name="male" value="female">여자</input>
+				</td>
+			</tr>
+			<tr>
+				<th>직업</th>
+				<td>
+					<select name="job">
+						<option>선택하여주십시오.</option>
+						<option>웹 디자이너</option>
+						<option>개발자</option>
+						<option>빅데이터 개발자</option>
+						<option>DBA</option>
+						<option>임베디드 개발자</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>email 주소</th>
+				<td>
+					<input type="email" name="mymail" />
+				</td>
+			</tr>
+			<tr style="text-align:center">
+				<td colspan="2">
+					<input type="submit" value="가입 신청"/>   	<input type="reset" value="취소" />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
