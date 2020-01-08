@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function calc() {
+				number = myform.num.value * 12900 * 0.9;
+				document.getElementById("total_price").innerHTML = "<h3>" + number + "</h3>";
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myform" action="">
+			수량 : <input type="text" name="num" onkeyup="calc()"/>
+		</form>
+		<p id="total_price"></p>
+	</body>
+</html>
