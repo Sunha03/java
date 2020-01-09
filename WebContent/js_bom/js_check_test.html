@@ -8,12 +8,42 @@
 		function allcheck() {
 			//food라는 이름으로 정의된 체크박스가 여러 개 > 배열로 관리
 			mycheck = document.cbfmt.food;
-			alert(mycheck);
-			alert(mycheck.length);
+			//alert(mycheck);
+			//alert(mycheck.length);
+			
+			/* allchk라는 체크박스의 값을 읽어서 food 체크 박스의 체크 값을 동일하게 설정
+			   allchk 선택 > food 체크박스 모두 선택
+			   allchk 선택 해제 > food 체크박스 모두 해제 */
+			allChkVal = cbfmt.allchk.checked;
+			//alert(allChkVal);
+			for(i=0;i<mycheck.length;i++) {
+				mycheck[i].checked = allChkVal;
+			}
+			
 			//mydiv = document.getElementById("result");
+			
 			//innerHTML : 문자열 컨텐츠 추가 - 기존의 컨텐츠 위에 출력됨
 			//p, div, span에서 사용
 			document.getElementById("result").innerHTML = "<h2>결과</h2>";
+		}
+		//div에 선택된 체크박스의 value 출력하기
+		/* 1. food 체크박스를 변수에 저장
+		   2. for문으로 food 체크 박스의 값을 하나하나 출력
+		   3. 선택된 체크박스만 값을 출력하도록 조건 제어
+		   4. div에 선택된 체크박스의 값을 누적시켜 변수에 저장
+		   5. 체크된 체크박스의 value를 div에 출력 */
+		function ckFunc() {
+			mycheck = document.cbfmt.food;
+			printVal = "";
+			for(i=0;i<mycheck.length;i++) {
+				if(mycheck[i].checked) {
+					//alert(mycheck[i].value + " : " + mycheck[i].checked);
+					printVal = printVal + mycheck[i].value + " ";
+				}
+			}
+			alert("완료 > " + printVal);
+			mydiv = document.getElementById("result");
+			mydiv.innerHTML = "<h3>" + printVal + "</h3>";
 		}
 		function printText() {
 			myval = cbfmt.test.value;		//getter
@@ -26,15 +56,11 @@
 <body>
 	<form name="cbfmt">
 		<label>아이스크림</label> 
-		<input type="checkbox" name="food"
-		 value="아이스크림" id="ice"> 
-			<label>커피</label> <input type="checkbox"	
-			name="food" value="커피" id="coffee">
-			 <label>음료수</label> <input type="checkbox" 
-			 name="food" value="음료수" id="beverage"> 
+		<input type="checkbox" name="food" value="아이스크림" id="ice"> 
+			<label>커피</label> <input type="checkbox" name="food" value="커피" id="coffee">
+			 <label>음료수</label> <input type="checkbox" name="food" value="음료수" id="beverage"> 
 			<label>모두체크/해제</label>
-		<input type="checkbox" name="allchk" 
-		id="allchk" onclick="allcheck()"><br>
+		<input type="checkbox" name="allchk" id="allchk" onclick="allcheck()"><br>
 
 		<input type="button" value="전송" onclick="ckFunc()"><br/>
 		<input type="text" name="test" onkeyup="printText()">
