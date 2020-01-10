@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById("imginsert").onclick = function() {
+				//img 노드 작성 - 태그노드(createElement 메소드를 이용)
+				//1. 삽입될 노드 생성
+				newNode = document.createElement("img");
+				newNode.setAttribute("src", "../images/m_garden02.jpg");
+				newNode.setAttribute("style","border:solid 1px blue;width:250px;")
+				
+				//2.targetNode 구하기
+				target = document.getElementById("domtestbtn");
+				
+				//3. 추가하기
+				target.appendChild(newNode);
+			};
+		}
+	</script>
 </head>
 <body>
 	<div id="main">

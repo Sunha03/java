@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../common/css/my_style.css"/>
+	</head>
+	<body>
+		<div id="clickMe">여기를 누르세요.</div>
+		<div id="picframe">
+			<img alt="" src="../images/m_garden01.jpg">
+		</div>
+		<script type="text/javascript">
+			//페이지 로딩 & dom 객체가 형성 > 익명 함수 실행
+			$(document).ready(function() {
+				//alert("jQuery 시작!");
+				//clickMe로 id가 정의된 객체를 클릭 > 익명의 함수를 사용
+				$("#clickMe").click(function() {
+					//alert("div Click");
+					
+					//id가 picframe으로 정의된 객체를 화면에 보이게
+					//다시 클릭 > 화면에서 사라지게
+					$("#picframe").slideToggle();
+				});
+			});
+			
+		</script>
+	</body>
+</html>
