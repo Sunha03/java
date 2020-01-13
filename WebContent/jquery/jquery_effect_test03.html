@@ -16,8 +16,28 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
+			//이벤트의 약식 표현 > 동적 요소에 이벤트 적용 불가
+			$("#move_up").click(function() {
+				//animate - css 속성을 적용해서 애니메이션 효과를 적용
+				//			properties : css 속성, duration : 적용 속도, easing
+				$("#mydiv").animate({top:30}, 100);
+			});
 			
+			$("#move_down").click(function() {
+				//animate - css 속성을 적용해서 애니메이션 효과를 적용
+				//			properties : css 속성, duration : 적용 속도, easing
+				$("#mydiv").animate({top:300}, 100);
+			});
+			
+			//!!on메소드를 통한 이벤트 연결(정식) > 여러 개의 이벤트에 반응 가능
+			//							  > 동적으로 생성된 DOM 객체에 이벤트 연결 가능
+			$("#changeColor").on({"click": function() {
+									$("#mydiv").css("color", "blue");}		//end function()
+								, "mouseover": test});			//callback으로
 		});
+		function test() {
+			alert("마우스 오버");
+		}
 	</script>
 	
 </head>

@@ -2,21 +2,38 @@
 
 <html>
 	<head>
-		<title>jquery</title> 
+		<title>jquery</title>
+		<link rel="stylesheet" href="../common/css/my_style2.css"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head> 
 	<body>
 		<div id="header">
 			<h2>아침고요수목원~</h2>
 		</div>
 		<div id="main">
-			<div class="gardenimg"><img src="../images/m_garden01.jpg" /></div>
-			<div class="gardenimg"><img src="../images/m_garden02.jpg"/></div>
-			<div class="gardenimg"><img src="../images/m_garden03.jpg"/></div>
-			<div class="gardenimg"><img src="../images/m_garden05.jpg"/></div>
+			<div class="gardenimg" id="img1"><img src="../images/m_garden01.jpg" /></div>
+			<div class="gardenimg" id="img2"><img src="../images/m_garden02.jpg"/></div>
+			<div class="gardenimg" id="img3"><img src="../images/m_garden03.jpg"/></div>
+			<div class="gardenimg" id="img4"><img src="../images/m_garden05.jpg"/></div>
 		</div>
 		
-		<script>
-		
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$(".gardenimg").on("mouseover", function() {
+				/*childLength = $(this).children().length;
+				
+				if(childLength > 0)
+					for(i=0;i<childLength - 1;i++)
+						$(this).children().last().remove();*/
+				$(".gardenimg p").remove();
+
+				visit = $("<p>방문자수 : " + Math.floor(Math.random() * 10 + 500) + "</p>");
+				$(this).append(visit);
+			});
+			$(".gardenimg").on("mouseleave", function() {
+				$(".gardenimg p").remove();
+			});
+		});
 		</script>
 	</body>
 </html>
