@@ -1,4 +1,4 @@
-package member.exam;
+package fw;
 
 import java.sql.*;
 
@@ -18,7 +18,7 @@ public class DBUtil {
 	//2. 커넥션하기 - DBMS와 접속 후에 접속정보를 저장하고 있는 Connection을 리턴
 	public static Connection getConnect() {
 		Connection con = null;
-		String url = "jdbc:oracle:thin:@70.12.226.157:1521:xe";
+		String url = "jdbc:oracle:thin:@70.12.115.66:1521:xe";
 		String user = "scott";
 		String password = "tiger";
 		
