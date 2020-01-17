@@ -1,6 +1,8 @@
 package dept;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,10 +31,21 @@ public class DeptServlet extends HttpServlet {
 		DeptDAOImpl daoImpl = new DeptDAOImpl();
 		int result = daoImpl.insert(dept);
 		
-		if(result == 1)
+		/*if(result == 1)
 			System.out.println("INSERT success!");
 		else if(result == 0)
-			System.out.println("INSERT fail..");
+			System.out.println("INSERT fail..");*/
+		
+		//응답화면으로 요청 재지정
+		//response.sendRedirect("/serverweb/dept/insertResult.html");
+		
+		//3. 데이터 공유
+		request.setAttribute("insertResult", result);
+		
+		//4. 응답화면으로 요청 재지정
+		RequestDispatcher rd = request.getRequestDispatcher("/dept/insertResult.jsp");
+		rd.forward(request, response);
+		
 	}
 
 }
