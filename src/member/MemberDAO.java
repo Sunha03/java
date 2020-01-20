@@ -1,18 +1,15 @@
-package dept;
+package member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import fw.DBUtil;
 
-public class DeptDAOImpl implements DeptDAO {
-	
-	@Override
-	public int insert(DeptDTO dept) {
-		String sql = "INSERT INTO mydept VALUES(?, ?, ?, ?, ?)";
+public class MemberDAO {
+	public int insert(MemberDTO member) {
+		String sql = "INSERT INTO member VALUES(?, ?, ?, ?, ?, ?, ?)";
 		Connection con = null;
 		PreparedStatement ptmt = null;
 		int result = 0;
@@ -21,11 +18,13 @@ public class DeptDAOImpl implements DeptDAO {
 			con = DBUtil.getConnect();
 			ptmt = con.prepareStatement(sql);
 			
-			ptmt.setString(1, dept.getDeptNo());
-			ptmt.setString(2, dept.getDeptName());
-			ptmt.setString(3, dept.getLoc());
-			ptmt.setString(4, dept.getTel());
-			ptmt.setString(5, dept.getMgr());
+			ptmt.setString(1, member.getId());
+			ptmt.setString(2, member.getPass());
+			ptmt.setString(3, member.getName());
+			ptmt.setString(4, member.getAddr());
+			ptmt.setString(5, member.getDeptno());
+			ptmt.setString(6, member.getGrade());
+			ptmt.setInt(7, member.getPoint());
 			
 			result = ptmt.executeUpdate();
 		} catch (SQLException e) {
@@ -37,15 +36,12 @@ public class DeptDAOImpl implements DeptDAO {
 		return result;
 	}
 
-	@Override
-	public ArrayList<DeptDTO> getDeptList() {
-		//System.out.println("getDeptList호출 > 서블릿 파라미터 출력");  //디버깅
-		
-		String sql = "SELECT * FROM mydept";
+	public ArrayList<MemberDTO> getMemList() {
+		String sql = "SELECT * FROM member";
 		Connection con = null;
 		PreparedStatement ptmt = null;
 		ResultSet rs = null;
-		ArrayList<DeptDTO> deptList = new ArrayList<DeptDTO>();
+		ArrayList<MemberDTO> memList = new ArrayList<MemberDTO>();
 		
 		try {
 			con = DBUtil.getConnect();
@@ -53,9 +49,9 @@ public class DeptDAOImpl implements DeptDAO {
 			rs = ptmt.executeQuery();
 			
 			while(rs.next()) {
-				DeptDTO dept = new DeptDTO(rs.getString(1), rs.getString(2), 
-						rs.getString(3), rs.getString(4), rs.getString(5));
-				deptList.add(dept);
+				MemberDTO member = new MemberDTO(rs.getString(1), rs.getString(2), rs.getString(3), 
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+				memList.add(member);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -63,12 +59,11 @@ public class DeptDAOImpl implements DeptDAO {
 			DBUtil.close(rs, ptmt, con);
 		}
 		
-		return deptList;
+		return memList;
 	}
 
-	@Override
-	public int delete(String deptNo) {
-		String sql = "DELETE FROM mydept WHERE deptno=?";
+	public int delete(String id) {
+		String sql = "DELETE FROM member WHERE id=?";
 		Connection con = null;
 		PreparedStatement ptmt = null;
 		int result = 0;
@@ -76,7 +71,7 @@ public class DeptDAOImpl implements DeptDAO {
 		try {
 			con = DBUtil.getConnect();
 			ptmt = con.prepareStatement(sql);
-			ptmt.setString(1, deptNo);
+			ptmt.setString(1, id);
 			result = ptmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -87,25 +82,24 @@ public class DeptDAOImpl implements DeptDAO {
 		return result;
 	}
 
-	@Override
-	public DeptDTO readDept(String deptNo) {
-		String sql = "SELECT * FROM mydept WHERE deptNo=?";
+	public MemberDTO readMember(String id) {
+		String sql = "SELECT * FROM member WHERE id=?";
 		Connection con = null;
 		PreparedStatement ptmt = null;
 		ResultSet rs = null;
-		DeptDTO dept = null;
+		MemberDTO member = null;
 		
 		try {
 			con = DBUtil.getConnect();
 			ptmt = con.prepareStatement(sql);
-			ptmt.setString(1, deptNo);
+			ptmt.setString(1, id);
 			rs = ptmt.executeQuery();
 			
 			//레코드가 1개 - DTO 레코드로 전환
 			//레코드가 여러 개 - DTO로 레코드를 변환 + ArrayList에 add
 			if(rs.next()) {
-				dept = new DeptDTO(rs.getString(1), rs.getString(2), 
-						rs.getString(3), rs.getString(4), rs.getString(5));
+				member = new MemberDTO(rs.getString(1), rs.getString(2), rs.getString(3), 
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -113,8 +107,6 @@ public class DeptDAOImpl implements DeptDAO {
 			DBUtil.close(rs, ptmt, con);
 		}
 		
-		System.out.println(dept.getDeptNo() + " " + dept.getDeptName() + " ");
-		
-		return dept;
+		return member;
 	}
 }
