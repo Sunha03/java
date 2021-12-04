@@ -1,0 +1,24 @@
+@charset "EUC-KR";
+h1{
+	font-weight: bolder;
+	color: #a7cece;
+	font-family: ±¼¸²;
+}
+#box{
+	height: 80px;
+	margin: 10px;
+	background: #a7cece;
+	background-image: url(../../images/background.gif);
+	background-repeat: no-repeat;
+	font-style: italic;
+	padding: 20px;
+	padding-left: 100px;
+	border-radius: 20px;
+	overflow: auto;
+}
+#outer{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+}

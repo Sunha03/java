@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function calc() {
+				num1 = parseInt(myform.num1.value);		//value > getter
+				myform.num2.value = num1 * 1.2;			//value > setter
+			}
+			function formexe(workingform){
+				//alert(workingform.num1.value);
+				
+				//일반버튼을 submit처럼 활용
+				workingform.submit();
+			}
+		</script>
+	</head>
+	<body onload="alter('페이지로딩')">
+		<form name="myform1">
+			<input type="text" name="num1" onchange="calc()">
+			<input type="text" name="num2">
+			<input type="button" name="전송1" onclick="formexe(this.form)">
+			<input type="button" name="전송2">
+		</form>
+		<form name="myform2">
+			<input type="text" name="num1" onchange="calc()">
+			<input type="text" name="num2">
+			<input type="button" name="전송1" onclick="formexe(this.form)">
+			<input type="button" name="전송2">
+		</form>
+		<form name="myform3">
+			<input type="text" name="num1" onchange="calc()">
+			<input type="text" name="num2">
+			<input type="button" name="전송1" onclick="formexe(this.form)">
+			<input type="button" name="전송2">
+		</form>
+		<img alt="" src="/clientweb/images/pengsoo1.jpg" name="myimg" 
+				onmouseover="myimg.src='/clientweb/images/pengsoo2.jpg'" 
+				onmouseout="myimg.src='/clientweb/images/pengsoo1.jpg'" />
+	</body>
+</html>

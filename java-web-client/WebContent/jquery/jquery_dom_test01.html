@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR" />
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script></script>
+		
+	<script type="text/javascript">
+		//data = $("<p>dom액세스하는 방법</p>");		//jQeury 객체
+		data = "<p>dom액세스하는 방법</p>";			//단순 문자열(p 노드 추가)
+		$(document).ready(function() {
+			$("#append").on("click", function() {
+				$("#btns").append(data);
+			});
+			$("#prepend").on("click", function() {
+				$("#btns").prepend(data);
+			});
+			$("#after").on("click", function() {
+				$("#btns").after(data);
+			});
+			$("#before").on("click", function() {
+				$("#btns").before(data);
+			});
+			$("#remove").on("click", function() {		//선택 노드 + 하위 노드 제거
+				$("#btns").remove();		//특정 객체 삭제 > remove(객체)
+			});
+			$("#empty").on("click", function() {		//하위 노드만 제거
+				$("#btns").empty();
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<div id="main">
+			<h1 id="myhead">안녕하세요 DOM에 관한 작업을 수행 중입니다.</h1>
+		
+			<div id="domtestbtn">
+				<form id="myformId" name="myform">	
+					<div id="btns" style="border: solid 1px blue">	
+						<input type="button" value="append" name="btn" id="append" />
+						<input type="button" value="prepend" name="btn" id="prepend" />
+							 
+						<input type="button" value="after" name="btn" id="after" />
+						<input type="button" value="before" name="btn" id="before" />
+					
+						<input type="button" value="remove" name="btn" id="remove" />
+						<input type="button" value=empty name="btn" id="empty" />
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+

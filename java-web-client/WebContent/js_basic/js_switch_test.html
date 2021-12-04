@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			jumsu = 90;
+			alert(Math.floor(jumsu/10));
+			if(jumsu < 0 || jumsu > 100) {
+				alert("잘못입력");
+			} else {
+				switch(jumsu/10) {
+					case 9:	case 10:
+						document.write("<h1>환영합니다 - 수</h1><br/>");
+						document.write("<br/><img src='../images/pengsoo.jpg'/>");
+						break;
+					case 8:
+						document.write("우");
+						break;
+					case 7:
+						document.write("미");
+						break;
+					case 6:
+						document.write("양");
+						break;
+					case 5:
+						document.write("가");
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>
